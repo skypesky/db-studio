@@ -2,6 +2,7 @@
   "name": "db-studio",
   "version": "0.1.0",
   "scripts": {
+    "debug": "bn-dev --open",
     "dev": "blocklet dev",
     "eject": "vite eject",
     "lint": "tsc --noEmit && eslint src api/src --ext .mjs,.js,.jsx,.ts,.tsx",
