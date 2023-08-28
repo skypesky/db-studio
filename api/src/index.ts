@@ -8,8 +8,8 @@ import dotenv from 'dotenv-flow';
 import express, { ErrorRequestHandler } from 'express';
 import fallback from 'express-history-api-fallback';
 
+import apiRouter from './api';
 import logger from './libs/logger';
-import routes from './routes';
 
 dotenv.config();
 
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
 app.use(cors());
 
 const router = express.Router();
-router.use('/api', routes);
+router.use('/api', apiRouter);
 app.use(router);
 
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
