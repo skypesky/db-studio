@@ -1,3 +1,5 @@
+/// <reference path="../../types/index.d.ts" />
+
 import 'express-async-errors';
 
 import path from 'path';

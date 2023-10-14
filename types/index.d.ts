@@ -4,6 +4,8 @@ declare module 'express-history-api-fallback';
 
 declare module 'express-async-errors';
 
+import type { Knex } from 'knex';
+
 namespace Express {
   interface Request {
     user?: {
@@ -11,5 +13,7 @@ namespace Express {
       role: string;
       fullName: string;
     };
+
+    instance?: Knex;
   }
 }
