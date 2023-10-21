@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv-flow';
 import express, { ErrorRequestHandler } from 'express';
+// @ts-ignore
 import fallback from 'express-history-api-fallback';
 
 import apiRouter from './api';

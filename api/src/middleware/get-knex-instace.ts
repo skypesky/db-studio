@@ -1,7 +1,11 @@
 import type { NextFunction, Request } from 'express';
 import knex, { Knex } from 'knex';
 
-const getKnexInstance = (req: Request & { instance: Knex }, _res: Response, next: NextFunction) => {
+export interface RequestWithInstance extends Request {
+  instance: Knex;
+}
+
+const getKnexInstance = (req: RequestWithInstance, _res: Response, next: NextFunction) => {
   req.instance = knex({
     client: 'better-sqlite3',
     connection: {
