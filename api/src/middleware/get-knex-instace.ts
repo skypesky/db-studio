@@ -1,11 +1,8 @@
-import type { NextFunction, Request } from 'express';
-import knex, { Knex } from 'knex';
+import type { NextFunction, Request, Response } from 'express';
+import knex from 'knex';
 
-export interface RequestWithInstance extends Request {
-  instance: Knex;
-}
-
-const getKnexInstance = (req: RequestWithInstance, _res: Response, next: NextFunction) => {
+const getKnexInstance = (req: Request, _res: Response, next: NextFunction) => {
+  // @ts-expect-error
   req.instance = knex({
     client: 'better-sqlite3',
     connection: {
